@@ -94,7 +94,6 @@ section {
 
 .rightNav p {
     z-index: 999999;
-    height:15vh;
     padding: 15px 8px 6px 8px;
     text-decoration: none;
     font-size: 25px;
@@ -106,6 +105,9 @@ section {
 
 .container{
     height: 100vh;
+	/*allow boxes to autoresize with page height*/
+	display: flex;
+	flex-direction: column;
 }
 
 .box{
@@ -114,32 +116,53 @@ section {
     justify-content: center;
 }
 
+/*allow boxes to autoresize with page height*/
+.container > div {
+  flex: 1;
+}
+
 .box p{
     color: white;
     padding-right: 25px;
 }
-/*=====================================*/
 
-/* =============Start of CSS for Card 1 open page===========*/
-.overlay1  {
-    height: 100%;
+#tablinkcontainer {
+	float:right;
+	width:100%;
+	transition-duration: 300ms;
+}
+
+/*=================Tabcontent generic style====================*/
+
+.tabcontent {
+	height: 100%;
     width: 0;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    /*background-color: black;*/
-    background-color: #2ecc71;
-    overflow-x: hidden;
-    transition: 0.5s;
+	overflow-x: hidden;
+    transition: 0.0s;
 }
 
-.overlay1-content {
-    position: relative;
+.tabcontent::-webkit-scrollbar {
+    display: none;
+}
+
+.overlaycontent {
+	position: relative;
     top: 25%;
     width: 100%;
     text-align: center;
     margin-top: 30px;
+}
+
+/* =============Start of CSS for Card 1 open page===========*/
+.overlay1  {
+
+    /*background-color: black;*/
+    background-color: #2ecc71;
+
 }
 
 .overlay1 a {
@@ -178,25 +201,10 @@ section {
 
 /* =============Start of CSS for 2 open pages===========*/
 .overlay2 {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     /*background-color: black;*/
     background-color: #f1c40f;
-    overflow-x: hidden;
-    transition: 0.5s;
 }
 
-.overlay2-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
 
 .overlay2 a {
     padding: 8px;
@@ -232,24 +240,8 @@ section {
 
 /* =============Start of CSS for 3 open pages===========*/
 .overlay3 {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     /*background-color: black;*/
     background-color: #e67e22;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.overlay3-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
 }
 
 .overlay3 a {
@@ -286,24 +278,8 @@ section {
 
 /* =============Start of CSS for 4 open pages===========*/
 .overlay4 {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     /*background-color: black;*/
     background-color: #ce1126;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.overlay4-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
 }
 
 .overlay4 a {
@@ -341,24 +317,8 @@ section {
 /* =============Start of CSS for 5 open pages===========*/
 
 .overlay5 {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    /*background-color: black;*/
+  /*background-color: black;*/
     background-color: #9b59b6;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.overlay5-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
 }
 
 .overlay5 a {
@@ -395,24 +355,8 @@ section {
 
 /* =============Start of CSS for 6 open pages===========*/
 .overlay6 {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     /*background-color: black;*/
     background-color: #3498db;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.overlay6-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
 }
 
 .overlay6 a {
@@ -450,24 +394,8 @@ section {
 /*!* =============Start of CSS for 7 open pages===========*!*/
 
 .overlay7 {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
     /*background-color: black;*/
     background-color: #1abc9c;
-    overflow-x: hidden;
-    transition: 0.5s;
-}
-
-.overlay7-content {
-    position: relative;
-    top: 25%;
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
 }
 
 .overlay7 a {
@@ -500,73 +428,6 @@ section {
     }
 }
 /* =============End of Card 7 open pages===========*/
-
-
-/*!* =============Start of CSS for 8 open pages===========*!*/
-/*.overlay8 {*/
-/*    height: 100%;*/
-/*    width: 0;*/
-/*    position: fixed;*/
-/*    z-index: 1;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    !*background-color: black;*!*/
-/*    background-color: #2ecc71;*/
-/*    overflow-x: hidden;*/
-/*    transition: 0.5s;*/
-/*}*/
-
-/*.overlay8 {*/
-/*    height: 100%;*/
-/*    width: 0;*/
-/*    position: fixed;*/
-/*    z-index: 1;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    !*background-color: black;*!*/
-/*    background-color: #34495e;*/
-/*    overflow-x: hidden;*/
-/*    transition: 0.5s;*/
-/*}*/
-
-/*.overlay8-content {*/
-/*    position: relative;*/
-/*    top: 25%;*/
-/*    width: 100%;*/
-/*    text-align: center;*/
-/*    margin-top: 30px;*/
-/*}*/
-
-/*.overlay8 a {*/
-/*    padding: 8px;*/
-/*    text-decoration: none;*/
-/*    font-size: 36px;*/
-/*    color: #818181;*/
-/*    display: block;*/
-/*    transition: 0.3s;*/
-/*}*/
-
-/*.overlay8 a:hover, .overlay8 a:focus {*/
-/*    color: #f1f1f1;*/
-/*}*/
-
-/*.overlay8 .closebtn {*/
-/*    position: absolute;*/
-/*    top: 20px;*/
-/*    right: 45px;*/
-/*    font-size: 60px;*/
-/*    background-color: #34495e;*/
-/*}*/
-
-/*@media screen and (max-height: 450px) {*/
-/*    .overlay8 a {font-size: 20px}*/
-/*    .overlay8 .closebtn {*/
-/*        font-size: 40px;*/
-/*        top: 15px;*/
-/*        right: 35px;*/
-/*    }*/
-/*}*/
-/* =============End of Card8 open pages===========*/
 
 .responsive{
     width: 100%;
@@ -630,27 +491,7 @@ section {
     background: #1abc9c;
     opacity: 0.25;
 }
-.image_card8{
-    align-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background: #344953;
-    opacity: 0.25;
-}
-/*.image_card9{*/
-/*    align-content: space-between;*/
-/*    margin-top: 10px;*/
-/*    margin-bottom: 10px;*/
-/*    background: #e743c3;*/
-/*    opacity: 0.25;*/
-/*}*/
-/*.image_card10{*/
-/*    align-content: space-between;*/
-/*    margin-top: 10px;*/
-/*    margin-bottom: 10px;*/
-/*    background: #16A085;*/
-/*    opacity: 0.25;*/
-/*}*/
+
 
 /*=====End Image Overlays within content info cards starts here ========*/
 
@@ -688,6 +529,7 @@ section {
     margin:0;
     padding: 0;
     display: flex;
+
 }
 
 /*Items within Navigation Container*/
